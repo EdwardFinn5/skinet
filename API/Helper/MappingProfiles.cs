@@ -6,8 +6,6 @@ namespace API.Helper
 {
     public class MappingProfiles : Profile
     {
-
-          
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
