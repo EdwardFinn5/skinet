@@ -21,6 +21,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
     this.basket$ = this.basketService.basket$;
     this.currentUser$ = this.accountService.currentUser$;
+    // console.log(this.currentUser$);
   }
 
   // tslint:disable-next-line: typedef

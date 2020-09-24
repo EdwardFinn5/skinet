@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { BehaviorSubject, of } from 'rxjs';
-import { ReplaySubject, of} from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, ReplaySubject, of } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { IUser } from '../shared/models/user';
 import { Router } from '@angular/router';
 import { IAddress } from '../shared/models/address';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AccountService {
   baseUrl = environment.apiUrl;
@@ -18,13 +17,13 @@ export class AccountService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
   // tslint:disable-next-line: typedef
   loadCurrentUser(token: string) {
     if (token === null) {
       this.currentUserSource.next(null);
       return of(null);
     }
-
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
 

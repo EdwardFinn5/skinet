@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -38,8 +39,8 @@ namespace API.Controllers
         {
             
             var user = await _UserManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
-
-             return new UserDto
+            
+            return new UserDto
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),

@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './core/Interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/Interceptors/loading.interceptors';
 import { JwtInterceptor } from './core/Interceptors/jwt.interceptor';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
